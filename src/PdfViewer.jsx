@@ -24,14 +24,29 @@ const PdfViewer = ({ pdf }) => {
     }
   };
 
+  const firstPage = () => {
+    setPageNumber(1);
+  };
+
+  const lastPage = () => {
+    setPageNumber(numPages);
+  };
+
   return (
     <div>
       <div className="controls">
-        <button onClick={prevPage} disabled={pageNumber === 1}>
-          Prev
+        <button className="btn" onClick={firstPage} disabled={pageNumber === 1}>
+          <span>&laquo;</span>
         </button>
-        <button onClick={nextPage} disabled={pageNumber === numPages}>
-          Next
+        <button className="btn" onClick={prevPage} disabled={pageNumber === 1}>
+          <span>&#8249;</span>
+        </button>
+        <span className="page-info">Page {pageNumber}/{numPages}</span>
+        <button className="btn" onClick={nextPage} disabled={pageNumber === numPages}>
+          <span>&#8250;</span>
+        </button>
+        <button className="btn" onClick={lastPage} disabled={pageNumber === numPages}>
+          <span>&raquo;</span>
         </button>
       </div>
 
