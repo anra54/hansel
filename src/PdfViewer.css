@@ -104,6 +104,11 @@
   margin: 0 10px;
 }
 
+.react-pdf__Page {
+  border: 1px solid grey;
+  box-shadow: 5px 10px 8px grey;
+}
+
 @media print {
   .pdf-container {
     display: none;
